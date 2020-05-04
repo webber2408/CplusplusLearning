@@ -19,9 +19,9 @@ string getDecryptedString(string input, int key){
 
 void encrypt(int key){
     fstream inputFile;
-    inputFile.open("originalPassword.txt", ios::in);
+    inputFile.open("originalInformation.txt", ios::in);
     fstream outputFile;
-    outputFile.open("encryptedPassword.txt", ios::out);
+    outputFile.open("codedInformation.txt", ios::out);
     if(inputFile.is_open() && outputFile.is_open()){
         string ip;
         while(getline(inputFile, ip)){
@@ -36,9 +36,9 @@ void encrypt(int key){
 
 void decrypt(int key){
     fstream inputFile;
-    inputFile.open("encryptedPassword.txt", ios::in);
+    inputFile.open("codedInformation.txt", ios::in);
     fstream outputFile;
-    outputFile.open("decryptedPassword.txt", ios::out);
+    outputFile.open("originalInformation.txt", ios::out);
     if(inputFile.is_open() && outputFile.is_open()){
         string ip;
         while(getline(inputFile, ip)){

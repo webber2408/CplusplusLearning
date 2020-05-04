@@ -31,7 +31,14 @@ void findPairs(int arr[], int N, int target){
     sort(arr, arr+N);
     int x = 0, y = N-1;
     while(x<y){
-        
+        if(arr[x]+arr[y] == target){
+            cout<<arr[x]<<" and "<<arr[y]<<endl;
+            x++;
+        }else if(arr[x]+arr[y] < target){
+            x++;
+        }else if(arr[x]+arr[y] > target){
+            y--;
+        }
     }
 }
 
