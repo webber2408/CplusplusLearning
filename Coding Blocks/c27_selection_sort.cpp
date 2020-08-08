@@ -1,29 +1,32 @@
 #include<iostream>
 #include<vector>
+#include<climits>
 using namespace std;
 
+/*
+Idea Behind:
+
+Start from the first index, find the minimum element in the array and replace it with the first one.
+Now the smallest element is the first element of the array.
+Similarly now do the same step for the array from [2..n]
+
+*/
 void selectionSort(vector<int> arr, int n){
-    
-    int i=0;
-    while(i<n-1){
-        int j = i, minIndex = i;
-        while(j <= n-1){
-            if(arr[j] < arr[minIndex]){
-                minIndex = j;
+
+    for(int i=0; i<n; i++){
+        int swapIndex = -1, minVal = INT_MAX;
+        for(int j=i; j<n; j++){
+            if(arr[j] < minVal){
+                minVal = arr[j];
+                swapIndex = j;
             }
-            j++;
         }
-        int temp = arr[minIndex];
-        arr[minIndex] = arr[i];
-        arr[i] = temp;
-        i++;
+        swap(arr[i], arr[swapIndex]);
     }
 
-    cout<<"Sorted Array"<<endl;
-    for(int i=0;i<n;i++){
+    for(int i=0; i<n; i++){
         cout<<arr[i]<<" ";
     }
-    cout<<endl;
 }
 
 int main(){
@@ -40,3 +43,4 @@ int main(){
 
     selectionSort(unsorted_array, n);
 }
+

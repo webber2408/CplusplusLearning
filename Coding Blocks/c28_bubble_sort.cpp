@@ -2,26 +2,32 @@
 #include<vector>
 using namespace std;
 
-bool compare(int a, int b){
-    return a>b;
-}
+/*
 
-void bubbleSort(vector<int> arr, int n, bool (&cmp)(int a, int b)){
+Idea behind:
+    Like bubbles in a water, heavier ones move upward and burst, 
+    similarly try to move the heavier/greater items in the array to the end.
 
-    for(int i = 0;i < n;i++){
-        for(int j = 0;j< n-i-1;j++){
-            if(cmp(arr[j], arr[j+1])){
-                swap(arr[j+1], arr[j]);
+    We have to do it for the number of elements in the array times,
+    because each time we move the largest element to the end of the
+    array.
+*/
+void bubbleSort(vector<int> arr, int n){
+
+    for(int i=0; i<n; i++){
+        for(int j=0; j<n-i-1; j++){ 
+            //Each time pick the largest element and push to end
+            if(arr[j] > arr[j+1]){
+                swap(arr[j], arr[j+1]);
             }
         }
     }
 
-    cout<<"Sorted Array"<<endl;
-    for(int i=0;i<n;i++){
+    for(int i=0; i<n; i++){
         cout<<arr[i]<<" ";
     }
-    cout<<endl;
 }
+
 
 int main(){
     int n;
@@ -35,5 +41,5 @@ int main(){
         unsorted_array.push_back(num);
     }
 
-    bubbleSort(unsorted_array, n, compare);
+    bubbleSort(unsorted_array, n);
 }
