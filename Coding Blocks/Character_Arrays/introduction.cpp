@@ -14,7 +14,7 @@ int main(){
     char s1[] = {'h', 'e', 'l', 'l', 'o'}; // Prints until it encounter a null character
     //Hence it is important to terminate each string with a null character.
     cout<<s<<" "<<sizeof(s)<<endl; //  incorporates null character (o/p: hello 6)
-    cout<<s1<<" "<<sizeof(s1)<<endl; // (o/p: hellohello 5)
+    cout<<s1<<" "<<sizeof(s1)<<endl; // (o/p: hello[hello->Garbage] 5)
 
 
     return 0;
