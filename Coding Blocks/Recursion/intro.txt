@@ -1,0 +1,6 @@
+1. Factorial
+2. Fibonaaci
+3. Increasing & Descreasing functions
+4. Binary Search
+5. power(a, n)
+6. Recursive function to multiply two numbers (a, b) without using * operator
