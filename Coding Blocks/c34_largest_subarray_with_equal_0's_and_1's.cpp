@@ -25,6 +25,7 @@ void getLargestSubArray(int arr[], int n){
         if(storeMap.find(sum) == storeMap.end()){
             storeMap[sum] = i;
         }else{
+            // is relative length found > max_length ?
             if((i - storeMap[sum]) > max_length){
                 max_length = i - storeMap[sum];
                 start_index = storeMap[sum]+1;
@@ -36,7 +37,7 @@ void getLargestSubArray(int arr[], int n){
     if(max_length == INT_MIN){
         max_length = 0;
         cout<<"Max length: "<<max_length<<endl;
-    }else{        
+    }else{
         cout<<"Max length: "<<max_length<<endl;
         cout<<"Start Index: "<<start_index<<endl;
         cout<<"End Index: "<<end_index<<endl;

@@ -13,7 +13,7 @@ Example 2:
 
 Input: nums = [5,7,7,8,8,10], target = 6
 Output: [-1,-1]
- 
+
 
 Constraints:
 
@@ -31,7 +31,7 @@ int getFirstOccurence(int arr[], int N, int target){
         m = l + (r-l)/2;
         if(arr[m] == target){
             ans = m;
-            r = m-1;
+            r = m-1; // catch
         }else if(arr[m] > target){
             r = m-1;
         }else{
@@ -46,7 +46,7 @@ int getLastOccurence(int arr[], int N, int target){
         m = l + (r-l)/2;
         if(arr[m] == target){
             ans = m;
-            l = m+1;
+            l = m+1; // catch
         }else if(arr[m] > target){
             r = m-1;
         }else{
