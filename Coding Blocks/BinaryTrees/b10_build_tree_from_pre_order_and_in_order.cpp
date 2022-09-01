@@ -20,7 +20,7 @@ node* buildTree(int *inorder, int *preorder, int l, int r){
     static int i=0;
     node* root = new node(preorder[i]); //Created root
 
-    //search for the root in preorder array
+    //search for the root in inorder array
     int index = -1;
     for(int j=0;j<=r;j++){
         if(inorder[j] == root->data){
